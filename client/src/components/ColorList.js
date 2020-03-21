@@ -20,9 +20,6 @@ const ColorList = ({ colors, updateColors, setDependency }) => {
 
   const saveEdit = e => {
     e.preventDefault();
-    // Make a put request to save your updated color
-    // think about where will you get the id from...
-    // where is is saved right now?
     axiosWithAuth()
       .put(`/colors/${colorToEdit.id}`, colorToEdit)
       .then(res => {
@@ -104,8 +101,6 @@ const ColorList = ({ colors, updateColors, setDependency }) => {
           </div>
         </form>
       )}
-      <div className="spacer" />
-      {/* stretch - build another form here to add a color */}
       <form onSubmit={saveColor}>
             <legend>add color</legend>
             <label>
@@ -133,6 +128,9 @@ const ColorList = ({ colors, updateColors, setDependency }) => {
               <button type="submit">save</button>
             </div>
           </form>
+      <div className="spacer" />
+      {/* stretch - build another form here to add a color */}
+      
     </div>
   );
 };
